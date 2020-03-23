@@ -37,25 +37,7 @@ class GratingSensor():
 ###=============================================================================###                 
                     # cited functions   
 ###=============================================================================### 
-# calculation A, Psi    
-    def IQsample4times(self): # nframe: number of frames
-        list_of_dfs = self.ReadSplitFile()
-        cdata = np.zeros((self.nline*self.nframe, self.nchannel, 8))
-        for i, v in enumerate(list_of_dfs):
-            for j, col in enumerate(v.columns):
-                I, Q = self.IQcalculation(np.array(v[col]))
-                cdata[i,j,0:4] = self.IQstatistic(I,Q)
-#                print('I', cdata[i,j,0])
-#                print('Q', cdata[i,j,1])
 
-                A, Psi = self.APsicalculation(I, Q)
-#                print('i, j', i, j)
-#                print('A', A)
-#                print('Psi', Psi)
-                cdata[i,j,4:8] = self.APsistatistic(A, Psi)
-#                print('A', cdata[i,j,4])
-#                print('Psi', cdata[i,j,5])
-        return cdata  
     
     # plot frames
     def PlotFrames(self, plottype = 'heatmap'): #split the calculated data into 8*8*8 3d numpy array, plot respectively and store in a dict with name in sequence 'Frame_i'
@@ -74,7 +56,25 @@ class GratingSensor():
         ff = self.PlotFrames()
         for v in ff.values():
             v.show()
-        
+# calculation A, Psi    
+    def IQsample4times(self): # nframe: number of frames
+        list_of_dfs = self.ReadSplitFile()
+        cdata = np.zeros((self.nline*self.nframe, self.nchannel, 8))
+        for i, v in enumerate(list_of_dfs):
+            for j, col in enumerate(v.columns):
+                I, Q = self.IQcalculation(np.array(v[col]))
+                cdata[i,j,0:4] = self.IQstatistic(I,Q)
+#                print('I', cdata[i,j,0])
+#                print('Q', cdata[i,j,1])
+
+                A, Psi = self.APsicalculation(I, Q)
+#                print('i, j', i, j)
+#                print('A', A)
+#                print('Psi', Psi)
+                cdata[i,j,4:8] = self.APsistatistic(A, Psi)
+#                print('A', cdata[i,j,4])
+#                print('Psi', cdata[i,j,5])
+        return cdata          
     ###=============================================================================###                 
                         # private functions   
     ###=============================================================================###  
