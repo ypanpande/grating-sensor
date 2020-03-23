@@ -94,7 +94,13 @@ class GratingSensor():
         voltfactor = {'10': 251.4, '12': 1005, '14':4020}
         
         return voltfactor[str(self.databits)]
-    
+    def IQstatistic(self, I,Q):
+        Imean = np.mean(I)
+        Qmean = np.mean(Q)
+        Istd = np.std(I)
+        Qstd = np.std(Q)
+        
+        return [Imean, Qmean, Istd, Qstd]    
     def IQcalculation(self, dd): # num: valid number of samples for 1 grill point stype=1 -> 120, stype = 2 -> 240
         a = []
         b = []
@@ -112,13 +118,7 @@ class GratingSensor():
         return np.array(a), np.array(b)
     
     
-    def IQstatistic(self, I,Q):
-        Imean = np.mean(I)
-        Qmean = np.mean(Q)
-        Istd = np.std(I)
-        Qstd = np.std(Q)
-        
-        return [Imean, Qmean, Istd, Qstd]
+
     
     
     def APsicalculation(self, I, Q):
