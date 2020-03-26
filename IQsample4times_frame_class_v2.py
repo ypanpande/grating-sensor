@@ -120,13 +120,7 @@ class GratingSensor():
     
 
     
-    
-    def APsicalculation(self, I, Q):
-        A = np.sqrt(I**2 + Q**2)
-        psi = np.degrees(np.arctan(Q/I))
-        
-        return A, psi
-    
+
     def APsistatistic(self, A, psi):
         AA = A[~np.isnan(A)]
         Psi = psi[~np.isnan(psi)]
@@ -139,7 +133,13 @@ class GratingSensor():
             psimean = psimean + 90
         
         return [Amean, psimean, Astd, psistd]
-    
+     
+    def APsicalculation(self, I, Q):
+        A = np.sqrt(I**2 + Q**2)
+        psi = np.degrees(np.arctan(Q/I))
+        
+        return A, psi
+       
     def PlotPoints(self, data, title):
         cmap = plt.cm.get_cmap('jet')
         cmap1 = plt.cm.get_cmap('jet')
