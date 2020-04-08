@@ -124,9 +124,7 @@ class GratingSensor():
         psimean = np.mean(Psi)
         Astd = np.std(AA)
         psistd = np.std(Psi)
-        
-        if psimean < 0:
-            psimean = psimean + 90
+
         
         return [Amean, psimean, Astd, psistd]
      
