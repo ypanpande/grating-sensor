@@ -194,17 +194,17 @@ class GratingSensor():
         axn[0,0].set_yticklabels(axn[0,0].get_yticklabels(), rotation=0, fontsize = 14)
         axn[0,0].set_ylabel('Send Channels', fontsize = 14)
         axn[0,0].invert_yaxis()
-        
-        sns.heatmap(data[:,:,6]*1000, linewidth = 0.1, annot = True, fmt = '.1f', 
-                    vmin = 0, vmax = 200, xticklabels = xticklabels, yticklabels = yticklabels,
-                    cmap = 'Reds', cbar = True, square = False, ax = axn[1,0],
-                    cbar_kws = {'ticks': np.linspace(0,200,11), 'label': 'Amp.(mV)'})
         axn[1,0].set_title('A_std', fontsize = 14)
         axn[1,0].set_xticklabels(axn[1,0].get_xticklabels(), fontsize = 14)        
         axn[1,0].set_yticklabels(axn[1,0].get_yticklabels(), rotation=0, fontsize = 14)
         axn[1,0].set_xlabel('Receive Channels', fontsize = 14)
         axn[1,0].set_ylabel('Send Channels', fontsize = 14)
         axn[1,0].invert_yaxis()
+        
+        sns.heatmap(data[:,:,6]*1000, linewidth = 0.1, annot = True, fmt = '.1f', 
+                    vmin = 0, vmax = 200, xticklabels = xticklabels, yticklabels = yticklabels,
+                    cmap = 'Reds', cbar = True, square = False, ax = axn[1,0],
+                    cbar_kws = {'ticks': np.linspace(0,200,11), 'label': 'Amp.(mV)'})
 
         sns.heatmap(data[:,:,5], linewidth = 0.1, annot = True, fmt = '.1f', 
                     vmin = 0, vmax = 90, xticklabels = xticklabels, yticklabels = yticklabels,
