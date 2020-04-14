@@ -213,14 +213,6 @@ class GratingSensor():
         axn[0,1].set_title('Psi_mean', fontsize = 14)
         axn[0,1].invert_yaxis()
 
-        sns.heatmap(data[:,:,7], linewidth = 0.1, annot = True, fmt = '.1f', 
-                    vmin = 0, vmax = 90, xticklabels = xticklabels, yticklabels = yticklabels,
-                    cmap = 'Reds', cbar = True, square = False, ax = axn[1,1],
-                    cbar_kws = {'ticks': np.linspace(0,90,11), 'label': 'Phase (deg.)'})
-        axn[1,1].set_title('Psi_std', fontsize = 14)
-        axn[1,1].set_xticklabels(axn[1,1].get_xticklabels(), fontsize = 14)
-        axn[1,1].set_xlabel('Receive Channels', fontsize = 14)
-        axn[1,1].invert_yaxis()
         
         fig.suptitle(title, fontsize = 18)
         plt.ioff()
