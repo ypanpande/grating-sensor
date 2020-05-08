@@ -213,10 +213,6 @@ class GratingSensor():
         axn[0,1].set_title('Psi_mean', fontsize = 14)
         axn[0,1].invert_yaxis()
 
-        
-        fig.suptitle(title, fontsize = 18)
-        plt.ioff()
-        plt.close()
-        return fig 
+
         
 if __name__ == '__main__': main()  
