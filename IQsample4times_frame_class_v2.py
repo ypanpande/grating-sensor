@@ -142,10 +142,7 @@ class GratingSensor():
         norm1 = mpl.colors.BoundaryNorm(np.arange(-2.5,97.5,5), cmap1.N)
 
         
-        fig, axs = plt.subplots(2,2, sharex = True, sharey = True, figsize = (6.5,8))
-        fig.subplots_adjust(top = 0.915, bottom = 0.06, left = 0.06, right = 0.995, hspace = 0.135, wspace = 0.01)
-        x, y = np.meshgrid(np.arange(1,self.nchannel+1), np.arange(1,self.nline+1))
-    
+
         fQ = axs[0,1].scatter(x,y, s = 200, edgecolor = 'black', linewidths = 300*data[:,:,3].flatten(), c = data[:,:,1], cmap = cmap, norm = norm0)
         axs[0,1].set_title('Q_mean, Q_std', fontsize = 14)
         axs[0,1].tick_params(labelsize = 12, which = 'both')
@@ -160,7 +157,10 @@ class GratingSensor():
         axs[0,0].yaxis.set_major_locator(ticker.MultipleLocator(1))
         axs[0,0].grid()
         fig.colorbar(fI, ax = axs[0,0], ticks = np.linspace(-2,2,21))
-
+        fig, axs = plt.subplots(2,2, sharex = True, sharey = True, figsize = (6.5,8))
+        fig.subplots_adjust(top = 0.915, bottom = 0.06, left = 0.06, right = 0.995, hspace = 0.135, wspace = 0.01)
+        x, y = np.meshgrid(np.arange(1,self.nchannel+1), np.arange(1,self.nline+1))
+    
         fA = axs[1,0].scatter(x,y, s = 200, edgecolor = 'black', linewidths = 300*data[:,:,6].flatten(), c = data[:,:,4], cmap = cmap, norm = norm)
         axs[1,0].set_title('A_mean, A_std', fontsize = 14)
         axs[1,0].set_xlabel('Receive Channels', fontsize = 14)
