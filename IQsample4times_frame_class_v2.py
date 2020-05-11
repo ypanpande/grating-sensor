@@ -160,7 +160,10 @@ class GratingSensor():
         fig, axs = plt.subplots(2,2, sharex = True, sharey = True, figsize = (6.5,8))
         fig.subplots_adjust(top = 0.915, bottom = 0.06, left = 0.06, right = 0.995, hspace = 0.135, wspace = 0.01)
         x, y = np.meshgrid(np.arange(1,self.nchannel+1), np.arange(1,self.nline+1))
-    
+        axs[1,1].set_title('Psi_mean, Psi_std', fontsize = 14)
+        axs[1,1].set_xlabel('Receive Channels', fontsize = 14)
+        axs[1,1].tick_params(labelsize = 12, which = 'both')    
+        axs[1,1].grid()    
         fA = axs[1,0].scatter(x,y, s = 200, edgecolor = 'black', linewidths = 300*data[:,:,6].flatten(), c = data[:,:,4], cmap = cmap, norm = norm)
         axs[1,0].set_title('A_mean, A_std', fontsize = 14)
         axs[1,0].set_xlabel('Receive Channels', fontsize = 14)
@@ -170,10 +173,7 @@ class GratingSensor():
         fig.colorbar(fA, ax = axs[1,0], ticks = np.linspace(0,2,21))
         
         fP = axs[1,1].scatter(x,y, s = 200, edgecolor = 'black', linewidths = 90*data[:,:,7].flatten(), c = data[:,:,5], cmap = cmap1, norm = norm1)
-        axs[1,1].set_title('Psi_mean, Psi_std', fontsize = 14)
-        axs[1,1].set_xlabel('Receive Channels', fontsize = 14)
-        axs[1,1].tick_params(labelsize = 12, which = 'both')    
-        axs[1,1].grid()
+
         fig.colorbar(fP, ax = axs[1,1], ticks = np.linspace(0,90,19))
         
         fig.suptitle(title, fontsize = 18)
