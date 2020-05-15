@@ -182,10 +182,7 @@ class GratingSensor():
         return fig 
     
     def HeatmapPlot(self, data, title):
-        fig, axn = plt.subplots(2, 2, sharex = True, sharey = True, figsize = (6.5,8))
-        fig.subplots_adjust(top = 0.915, bottom = 0.06, left = 0.06, right = 0.995, hspace = 0.135, wspace = 0.01)
-        xticklabels = range(1,self.nchannel+1)
-        yticklabels = range(1,self.nline+1)
+
         axn[0,0] = sns.heatmap(data[:,:,4], linewidth = 0.1, annot = True, fmt = '.2f', 
                     vmin = 0, vmax = 2, xticklabels = xticklabels, yticklabels = yticklabels,
                     cmap = 'Reds', cbar = True, square = False, ax = axn[0,0],
