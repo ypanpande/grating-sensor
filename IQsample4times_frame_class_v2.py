@@ -191,10 +191,7 @@ class GratingSensor():
         axn[0,0].set_yticklabels(axn[0,0].get_yticklabels(), rotation=0, fontsize = 14)
         axn[0,0].set_ylabel('Send Channels', fontsize = 14)
         axn[0,0].invert_yaxis()
-        axn[1,0].set_title('A_std', fontsize = 14)
-        axn[1,0].set_xticklabels(axn[1,0].get_xticklabels(), fontsize = 14)        
-        axn[1,0].set_yticklabels(axn[1,0].get_yticklabels(), rotation=0, fontsize = 14)
-        axn[1,0].set_xlabel('Receive Channels', fontsize = 14)
+
         axn[1,0].set_ylabel('Send Channels', fontsize = 14)
         axn[1,0].invert_yaxis()
         
