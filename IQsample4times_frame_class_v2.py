@@ -135,11 +135,6 @@ class GratingSensor():
         return A, psi
        
     def PlotPoints(self, data, title):
-        cmap = plt.cm.get_cmap('jet')
-        cmap1 = plt.cm.get_cmap('jet')
-        norm = mpl.colors.BoundaryNorm(np.arange(-0.05,2.15,0.1), cmap.N)
-        norm0 = mpl.colors.BoundaryNorm(np.arange(-2.1,2.3,0.2), cmap.N)
-        norm1 = mpl.colors.BoundaryNorm(np.arange(-2.5,97.5,5), cmap1.N)
 
         
 
