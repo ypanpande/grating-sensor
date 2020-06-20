@@ -178,10 +178,7 @@ class GratingSensor():
         axn[0,0].set_title('A_mean', fontsize = 14)
         axn[0,0].set_yticklabels(axn[0,0].get_yticklabels(), rotation=0, fontsize = 14)
         axn[0,0].set_ylabel('Send Channels', fontsize = 14)
-        axn[0,0].invert_yaxis()
 
-        axn[1,0].set_ylabel('Send Channels', fontsize = 14)
-        axn[1,0].invert_yaxis()
         
         sns.heatmap(data[:,:,6]*1000, linewidth = 0.1, annot = True, fmt = '.1f', 
                     vmin = 0, vmax = 200, xticklabels = xticklabels, yticklabels = yticklabels,
