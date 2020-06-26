@@ -170,7 +170,7 @@ class GratingSensor():
         return fig 
     
     def HeatmapPlot(self, data, title):
-
+        axn[0,1].set_title('Psi_mean', fontsize = 14)
         axn[0,0] = sns.heatmap(data[:,:,4], linewidth = 0.1, annot = True, fmt = '.2f', 
                     vmin = 0, vmax = 2, xticklabels = xticklabels, yticklabels = yticklabels,
                     cmap = 'Reds', cbar = True, square = False, ax = axn[0,0],
@@ -189,7 +189,7 @@ class GratingSensor():
                     vmin = 0, vmax = 90, xticklabels = xticklabels, yticklabels = yticklabels,
                     cmap = 'Reds', cbar = True, square = False, ax = axn[0,1],
                     cbar_kws = {'ticks': np.linspace(0,90,19),'label': 'Phase (deg.)'})
-        axn[0,1].set_title('Psi_mean', fontsize = 14)
+
         axn[0,1].invert_yaxis()
 
 
