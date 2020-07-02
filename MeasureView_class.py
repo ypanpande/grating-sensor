@@ -49,7 +49,12 @@ class MeasureView():
         s.configure('my3.TButton', font = ('Helvetica', 12), foreground = 'black')
         
         ttk.Label(self.root, text = "Measurement Settings:", font = ('Helvetica', 12,'bold'), foreground = 'blue').place(x = 10, y = 10,  width = 450, height = 30)		
-        
+        ttk.Label(self.root, text = "Samples Per Channel:").place(x = 50, y = 265,  width = 160, height = 30)       
+#        ttk.Entry(self.root, textvariable = self.NumberOfSamplesPerChannel).place(x = 220, y = 230, width = 200, height = 30)
+        cchnum = ttk.Combobox(self.root, textvariable = self.NumberOfSamplesPerChannel, state = 'readonly')
+        cchnum['value'] = (4096,8192,12288,16384,20480,24576,28672,32768,36864,40960,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432)
+        cchnum.place(x = 220, y = 265, width = 200, height = 30)
+        cchnum.current(0)        
         ttk.Label(self.root, text = "Board Setting:", font = ('Helvetica', 10, 'bold')).place(x = 10, y = 50,  width = 200, height = 30)		
         ttk.Label(self.root, text = "Board Serial Number:").place(x = 50, y = 85,  width = 160, height = 30)		
         ttk.Entry(self.root, textvariable = self.BoardSerialNumber).place(x = 220, y = 85, width = 200, height = 30)
@@ -66,12 +71,7 @@ class MeasureView():
         ttk.Entry(self.root, textvariable = self.ADCInputTargetFrequency).place(x = 220, y = 230, width = 150, height = 30)
         ttk.Label(self.root, text = "MHz").place(x = 380, y = 230,  width = 50, height = 30)		
 
-        ttk.Label(self.root, text = "Samples Per Channel:").place(x = 50, y = 265,  width = 160, height = 30)		
-#        ttk.Entry(self.root, textvariable = self.NumberOfSamplesPerChannel).place(x = 220, y = 230, width = 200, height = 30)
-        cchnum = ttk.Combobox(self.root, textvariable = self.NumberOfSamplesPerChannel, state = 'readonly')
-        cchnum['value'] = (4096,8192,12288,16384,20480,24576,28672,32768,36864,40960,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432)
-        cchnum.place(x = 220, y = 265, width = 200, height = 30)
-        cchnum.current(0)
+
         
         ttk.Label(self.root, text = "Trigger Mode Enable:").place(x = 50, y = 300,  width = 160, height = 30)		
 #        ttk.Entry(self.root, textvariable = self.TriggerModeEnable).place(x = 220, y = 270, width = 200, height = 30)
