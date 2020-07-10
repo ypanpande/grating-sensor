@@ -31,15 +31,7 @@ class MeasureView():
         self.ADCDevice = tk.StringVar()
         self.ADCDevice.set('ADS52J90')
         self.ADCOutputDataRate = tk.DoubleVar()
-        self.ADCOutputDataRate.set(20)
-        self.ADCInputTargetFrequency = tk.DoubleVar()
-        self.ADCInputTargetFrequency.set(5)
-        self.NumberOfSamplesPerChannel = tk.IntVar()
-        self.NumberOfSamplesPerChannel.set(4096)
-        self.TriggerModeEnable = tk.BooleanVar()
-        self.TriggerModeEnable.set(1)
-        self.CSVFileName = tk.StringVar()
-        self.CSVFileName.set('data')
+
     def init_gui(self):
         
         s = ttk.Style()
