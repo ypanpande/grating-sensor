@@ -59,12 +59,7 @@ class MeasureView():
         ttk.Entry(self.root, textvariable = self.ADCOutputDataRate).place(x = 220, y = 195, width = 150, height = 30)
         ttk.Label(self.root, text = "MHz").place(x = 380, y = 195,  width = 50, height = 30)		
 
-        ttk.Label(self.root, text = "ADC Input Target Frequency:").place(x = 50, y = 230,  width = 160, height = 30)		
-        ttk.Entry(self.root, textvariable = self.ADCInputTargetFrequency).place(x = 220, y = 230, width = 150, height = 30)
-        ttk.Label(self.root, text = "MHz").place(x = 380, y = 230,  width = 50, height = 30)		
 
-
-        
         ttk.Label(self.root, text = "Trigger Mode Enable:").place(x = 50, y = 300,  width = 160, height = 30)		
 #        ttk.Entry(self.root, textvariable = self.TriggerModeEnable).place(x = 220, y = 270, width = 200, height = 30)
         ctrigger = ttk.Combobox(self.root, textvariable = self.TriggerModeEnable, state = 'readonly')
