@@ -69,13 +69,13 @@ class MeasureView():
         
         ttk.Label(self.root, text = "Measure Process:", font = ('Helvetica', 12, 'bold'), foreground = 'blue').place(x = 10, y = 345,  width = 450, height = 30)		
         
-        photo = tk.PhotoImage(file = 'bitmap2.png')
+        self.bpre = ttk.Button(self.root, text = 'Preparation', style = 'my.TButton', command = self.Preparation)
+        self.bpre.place(x = 155, y = 385, width = 115, height = 30)        photo = tk.PhotoImage(file = 'bitmap2.png')
         w = ttk.Label(self.root, image = photo)
         w.photo = photo
         w.place(x = 120, y = 385, width = 30, height = 30)
         
-        self.bpre = ttk.Button(self.root, text = 'Preparation', style = 'my.TButton', command = self.Preparation)
-        self.bpre.place(x = 155, y = 385, width = 115, height = 30)
+
         
         self.bset = ttk.Button(self.root, text = 'Connect Board', style = 'my.TButton', state = 'disabled', command = self.Connect_Device)
         self.bset.place(x = 120, y = 430, width = 150, height = 30)
