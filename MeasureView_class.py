@@ -73,12 +73,6 @@ class MeasureView():
         self.bpre.place(x = 155, y = 385, width = 115, height = 30)        photo = tk.PhotoImage(file = 'bitmap2.png')
         w = ttk.Label(self.root, image = photo)
         w.photo = photo
-
-
-        
-        self.bset = ttk.Button(self.root, text = 'Connect Board', style = 'my.TButton', state = 'disabled', command = self.Connect_Device)
-        self.bset.place(x = 120, y = 430, width = 150, height = 30)
-
         self.bcon = ttk.Button(self.root, text = 'Configuration', style = 'my.TButton', state = 'disabled', command = self.Configuration)
         self.bcon.place(x = 120, y = 475, width = 150, height = 30)
 
