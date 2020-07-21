@@ -149,7 +149,7 @@ class GratingSensor():
         axs[0,0].set_ylabel('Send Channels', fontsize = 14)
         axs[0,0].tick_params(labelsize = 12, which = 'both')
         axs[0,0].xaxis.set_major_locator(ticker.MultipleLocator(1))
-        axs[0,0].yaxis.set_major_locator(ticker.MultipleLocator(1))
+    
         axs[0,0].grid()
 
         fA = axs[1,0].scatter(x,y, s = 200, edgecolor = 'black', linewidths = 300*data[:,:,6].flatten(), c = data[:,:,4], cmap = cmap, norm = norm)
