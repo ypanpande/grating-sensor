@@ -81,16 +81,16 @@ class MeasureView():
         self.lfolder = ttk.Label(self.root, text = self.CSVFileFolderPath, background = "white", wraplength = 300)
         self.lfolder.place(x = 115, y = 520, width = 300, height = 30)
 
-        ttk.Label(self.root, text = "File Name:", font = ('Helvetica', 12)).place(x = 20, y = 560,  width = 90, height = 30)		
+
+
+        self.bdiscon = ttk.Button(self.root, text = 'Disconnect Device', style = 'my.TButton', state = 'disabled', command = self.Disconnect_Device)
+        self.bdiscon.place(x = 120, y = 650, width = 150, height = 30)
+        ttk.Label(self.root, text = "File Name:", font = ('Helvetica', 12)).place(x = 20, y = 560,  width = 90, height = 30)        
         self.Efile = ttk.Entry(self.root, textvariable = self.CSVFileName)
         self.Efile.place(x = 115, y = 560, width = 300, height = 30)
         
         self.bcapture = ttk.Button(self.root, text = 'Capture Data', style = 'my.TButton', state = 'disabled', command = self.Data_Capture)
         self.bcapture.place(x = 120, y = 605, width = 150, height = 30)
-
-        self.bdiscon = ttk.Button(self.root, text = 'Disconnect Device', style = 'my.TButton', state = 'disabled', command = self.Disconnect_Device)
-        self.bdiscon.place(x = 120, y = 650, width = 150, height = 30)
-
 
 
         ttk.Label(self.root, text = "Data Analyse:", font = ('Helvetica', 12, 'bold'), foreground = 'blue').place(x = 10, y = 720,  width = 115, height = 30)		
