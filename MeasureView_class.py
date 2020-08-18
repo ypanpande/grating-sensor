@@ -92,15 +92,15 @@ class MeasureView():
         self.bcapture = ttk.Button(self.root, text = 'Capture Data', style = 'my.TButton', state = 'disabled', command = self.Data_Capture)
         self.bcapture.place(x = 120, y = 605, width = 150, height = 30)
 
-
+        ttk.Label(self.root, text = "Quit GUI:", font = ('Helvetica', 12, 'bold'), foreground = 'blue').place(x = 10, y = 790,  width = 115, height = 30)       
+        ttk.Button(self.root, text = 'Quit GUI', style = 'my2.TButton',  command = self.Quit_Gui).place(x = 130, y = 790, width = 150, height = 35)
+        
         ttk.Label(self.root, text = "Data Analyse:", font = ('Helvetica', 12, 'bold'), foreground = 'blue').place(x = 10, y = 720,  width = 115, height = 30)		
         self.banalyse = ttk.Button(self.root, text = 'Data Analyse', style = 'my1.TButton', command = self.Data_Analyse)
         self.banalyse.place(x = 130, y = 720, width = 150, height = 35)
 
 
-        ttk.Label(self.root, text = "Quit GUI:", font = ('Helvetica', 12, 'bold'), foreground = 'blue').place(x = 10, y = 790,  width = 115, height = 30)		
-        ttk.Button(self.root, text = 'Quit GUI', style = 'my2.TButton',  command = self.Quit_Gui).place(x = 130, y = 790, width = 150, height = 35)
-        
+
     def Preparation(self):
         checkm = messagebox.askyesno(title = 'Preparation finished?', 
                             message = ' 1. Hardware Connected? \n 2.HSDCPro GUI Opened? \n 3. No pop up dialogs in HSDCPro GUI? \n 4. Measurement Setting are Correct?')
