@@ -99,6 +99,13 @@ class MeasureView():
         self.banalyse = ttk.Button(self.root, text = 'Data Analyse', style = 'my1.TButton', command = self.Data_Analyse)
         self.banalyse.place(x = 130, y = 720, width = 150, height = 35)
 
+    def get_all_para(self):
+        self.parameters = {'BoardSerialNumber': self.BoardSerialNumber.get(), 'ADCDevice': self.ADCDevice.get()}
+        
+#        'ADCOutputDataRate': self.ADCOutputDataRate.get()*1000000, 'ADCInputTargetFrequency': self.ADCInputTargetFrequency.get()*1000000,
+#                           'NumberOfSamplesPerChannel': self.NumberOfSamplesPerChannel.get(), 'TriggerModeEnable': self.TriggerModeEnable.get()
+        
+        return self.parameters
 
 
     def Preparation(self):
@@ -107,13 +114,6 @@ class MeasureView():
         if checkm:
             self.bset['state'] = 'normal'
             
-    def get_all_para(self):
-        self.parameters = {'BoardSerialNumber': self.BoardSerialNumber.get(), 'ADCDevice': self.ADCDevice.get()}
-        
-#        'ADCOutputDataRate': self.ADCOutputDataRate.get()*1000000, 'ADCInputTargetFrequency': self.ADCInputTargetFrequency.get()*1000000,
-#                           'NumberOfSamplesPerChannel': self.NumberOfSamplesPerChannel.get(), 'TriggerModeEnable': self.TriggerModeEnable.get()
-        
-        return self.parameters
 
     def Connect_Device(self):
         setting = self.get_all_para()
