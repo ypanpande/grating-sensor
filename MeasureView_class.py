@@ -111,8 +111,7 @@ class MeasureView():
     def Preparation(self):
         checkm = messagebox.askyesno(title = 'Preparation finished?', 
                             message = ' 1. Hardware Connected? \n 2.HSDCPro GUI Opened? \n 3. No pop up dialogs in HSDCPro GUI? \n 4. Measurement Setting are Correct?')
-        if checkm:
-            self.bset['state'] = 'normal'
+
             
 
     def Connect_Device(self):
