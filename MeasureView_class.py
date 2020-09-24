@@ -115,11 +115,7 @@ class MeasureView():
             
 
     def Connect_Device(self):
-        setting = self.get_all_para()
-        self.A = HSDCPro(**setting)
-        self.A.Connect_Board()
-        self.A.Select_ADC_Device()
-        self.A.HSDC_Ready()
+
 #        messagebox.showinfo(title = 'HMC-DAQ GUI Setup', message = 'Please MANUALLY Setup HMC-DAQ GUI\nTHEN Press ENTER to Continue')
         self.A.Manual_Setup_HMC_DAQ_GUI()
         self.bcon['state'] = 'normal'
