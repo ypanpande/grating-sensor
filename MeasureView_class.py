@@ -115,9 +115,7 @@ class MeasureView():
 
 #        messagebox.showinfo(title = 'HMC-DAQ GUI Setup', message = 'Please MANUALLY Setup HMC-DAQ GUI\nTHEN Press ENTER to Continue')
         self.A.Manual_Setup_HMC_DAQ_GUI()
-        self.bcon['state'] = 'normal'
-        self.bdiscon['state'] = 'normal'
-        self.bset['state'] = 'disabled'
+
         
     def Configuration(self):
         self.A.Pass_ADC_Output_Data_Rate(c_double(self.ADCOutputDataRate.get()*1000000))
