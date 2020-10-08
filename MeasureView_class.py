@@ -92,9 +92,6 @@ class MeasureView():
         self.bcapture = ttk.Button(self.root, text = 'Capture Data', style = 'my.TButton', state = 'disabled', command = self.Data_Capture)
         self.bcapture.place(x = 120, y = 605, width = 150, height = 30)
 
-        ttk.Label(self.root, text = "Quit GUI:", font = ('Helvetica', 12, 'bold'), foreground = 'blue').place(x = 10, y = 790,  width = 115, height = 30)       
-        ttk.Button(self.root, text = 'Quit GUI', style = 'my2.TButton',  command = self.Quit_Gui).place(x = 130, y = 790, width = 150, height = 35)
-        
 
     def get_all_para(self):
         self.parameters = {'BoardSerialNumber': self.BoardSerialNumber.get(), 'ADCDevice': self.ADCDevice.get()}
