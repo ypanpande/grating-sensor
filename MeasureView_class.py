@@ -108,10 +108,6 @@ class MeasureView():
 
             
 
-    def Connect_Device(self):
-
-#        messagebox.showinfo(title = 'HMC-DAQ GUI Setup', message = 'Please MANUALLY Setup HMC-DAQ GUI\nTHEN Press ENTER to Continue')
-        self.A.Manual_Setup_HMC_DAQ_GUI()
 
         
     def Configuration(self):
