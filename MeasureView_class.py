@@ -108,15 +108,6 @@ class MeasureView():
 
             
 
-
-        
-    def Configuration(self):
-        self.A.Pass_ADC_Output_Data_Rate(c_double(self.ADCOutputDataRate.get()*1000000))
-        self.A.Set_ADC_Input_Target_Frequency(c_double(self.ADCInputTargetFrequency.get()*1000000))
-        self.A.Set_Number_of_Samples(c_uint64(self.NumberOfSamplesPerChannel.get()))
-        self.A.Trigger_Option(c_int(self.TriggerModeEnable.get()))
-#        self.bfolder['state'] = 'normal'
-#        self.Efile['state'] = 'normal'
     
     def Data_folder(self):
         root = tk.Tk()
@@ -126,6 +117,15 @@ class MeasureView():
         self.lfolder['text'] = self.CSVFileFolderPath
         self.bcapture['state'] = 'normal'
         
+        
+    def Configuration(self):
+        self.A.Pass_ADC_Output_Data_Rate(c_double(self.ADCOutputDataRate.get()*1000000))
+        self.A.Set_ADC_Input_Target_Frequency(c_double(self.ADCInputTargetFrequency.get()*1000000))
+        self.A.Set_Number_of_Samples(c_uint64(self.NumberOfSamplesPerChannel.get()))
+        self.A.Trigger_Option(c_int(self.TriggerModeEnable.get()))
+#        self.bfolder['state'] = 'normal'
+#        self.Efile['state'] = 'normal'
+
     def get_csvsavefile(self):
         return os.path.join(self.CSVFileFolderPath, self.CSVFileName.get() + '.csv')
 
