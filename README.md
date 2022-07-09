@@ -60,4 +60,4 @@ class GratingSensor:
         
 
 ## Python dependencies
-The list of required python packages is contained in the [requirements.txt](requirements.txt) file in this repository. After install the required dependencies, run `main_EDS_composition.py` to execute the program.
+The list of required python packages is contained in the [requirements.txt](requirements.txt) file in this repository. After install the required dependencies, run `MeasurementView_main.py` to execute the program.
