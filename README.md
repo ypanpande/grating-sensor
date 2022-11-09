@@ -9,9 +9,9 @@ This software is for customized controling of evaluation board (ADS52J90) to col
 ### Screenshots
 
 <div align = "center">
-  <img align = "center" width = "400" src = "/assets/image1.jpg">
+  <img align = "center" width = "300" src = "/assets/image1.jpg">
 <p align = "center">Overview of evaluation board</p> <br>
-    <img align = "center" width = "600" src = "/assets/image3.jpg"/>
+    <img align = "center" width = "800" src = "/assets/image3.jpg"/>
         <p align = "center"> Data process and visualizaiton</p><br>     
 </div>
 
